@@ -2,6 +2,7 @@ class chatbook:
     def __init__(self):
         self.username=""
         self.password=""
+        self.loggedin=False
         self.menu()
 
     def menu(self):
@@ -14,9 +15,9 @@ class chatbook:
                            ==> """)
 
         if user_input == "1":
-            self.singup()
+            self.signup()
         elif user_input == "2":
-            self.singin()
+            self.signin()
         elif user_input == "3":
             self.post()
         elif user_input== "4":
@@ -24,4 +25,32 @@ class chatbook:
         else:
             print("Welcome back")
             exit()
+    def signup(self):
+        email=input("Enter user name ==> ")
+        password=input("Set you password ==> ")
+        self.username=email
+        self.password=password 
+        print("Signup succesful ")
+        print("\n")
+        self.menu()
+    
+    def signin(self):
+        if self.username=="" and self.password=="":
+            print("Please first do signup in main menu")
+        else:
+            uname=input("Enter your username here ==> ")
+            upass=input("Enter your password ==> ")
+            if self.username==uname and self.password==upass:
+                print("SingedIn Succesfully")
+                self.loggedin=True 
+            else:
+                print("Incorrect username and password")
+        print("\n")
+        self.menu()    
+        
+        
+        
+
+
+    
 user1=chatbook()       
