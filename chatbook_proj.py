@@ -47,7 +47,25 @@ class chatbook:
                 print("Incorrect username and password")
         print("\n")
         self.menu()    
-        
+    def post(self):
+        if self.loggedin==True:
+            post=input("Write a post==> ")
+            print(f"Your post is published==> {post}")
+        else:
+            print("you need to do signin first by pressing 2 in menu")
+        print("\n")
+        self.menu()
+    def msg(self):
+        if self.loggedin==True:
+            friend_name=input("Whom you want to send a msg=>")
+            msg=input("Write a message here ==> ")
+            print(f"Your msg has been sent to {friend_name}")
+        else:
+            print("You need to sign in first to send msg to your friend")
+        print("\n")
+        self.menu()
+
+
         
         
 
