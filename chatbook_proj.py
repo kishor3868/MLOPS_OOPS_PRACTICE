@@ -1,9 +1,25 @@
 class chatbook:
+    __user_id =1 # static value
     def __init__(self):
+        self.__name="Default user"# using encapsulation in python
+        self.id = chatbook.__user_id # class access the static attribute 
+        chatbook.__user_id +=1
         self.username=""
         self.password=""
         self.loggedin=False
-        self.menu()
+        # self.menu()
+
+    def getter(self):# these are the method to get the hidden attribute and set the hidden attreibute
+        return self.__name
+    def set_name(self,value):#setter
+        self.__name=value
+    @staticmethod
+    def get_id():
+        return chatbook.__user_id
+    @staticmethod
+    def set_id(value):
+        chatbook.__user_id=value
+
 
     def menu(self):
         user_input =input ("""**Welcome to the chatbook | How would you like to proceeds
@@ -71,4 +87,4 @@ class chatbook:
 
 
     
-user1=chatbook()       
+# user1=chatbook()       

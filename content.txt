@@ -1,0 +1,6 @@
+Class and object
+static method is always called by class not the object
+end to end project
+> encapsulation
+> setter and getter
+> 
