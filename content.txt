@@ -3,4 +3,62 @@ static method is always called by class not the object
 end to end project
 > encapsulation
 > setter and getter
-> 
+> static method 
+> Inheritance 
+Inheritance in OOPs
+Inheritance is one of the core concepts of Object-Oriented Programming (OOPs), where a child class (subclass) inherits properties and behaviors (methods) from a parent class (superclass). This promotes code reusability and helps in creating a hierarchical structure.
+
+Types of Inheritance
+Single Inheritance → One class inherits from another.
+Multiple Inheritance → A class inherits from multiple base classes.
+Multilevel Inheritance → A class inherits from another class, which is itself derived from another class.
+Hierarchical Inheritance → Multiple child classes inherit from a single parent class.
+Hybrid Inheritance → A combination of multiple types of inheritance.
+Example of Single Inheritance in Python
+python
+Copy
+Edit
+# Parent class
+class Vehicle:
+    def __init__(self, brand):
+        self.brand = brand
+
+    def show_brand(self):
+        print(f"Brand: {self.brand}")
+
+# Child class inheriting from Vehicle
+class Car(Vehicle):
+    def __init__(self, brand, model):
+        super().__init__(brand)  # Calling parent class constructor
+        self.model = model
+
+    def show_details(self):
+        print(f"Car Model: {self.model}")
+
+# Creating an object of Car class
+car1 = Car("Toyota", "Camry")
+car1.show_brand()  # Accessing parent class method
+car1.show_details()  # Accessing child class method
+Output:
+yaml
+Copy
+Edit
+Brand: Toyota  
+Car Model: Camry  
+This demonstrates how the Car class inherits attributes and methods from the Vehicle class while adding its own functionality.
+1. Code Reusability 
+2. Maintainability & Scalability 
+3. Method Overriding (Polymorphism) 
+4. Faster Development 
+5. Improves Code Organization 
+Example:
+scss
+Copy
+Edit
+Animal (Base Class)
+  ├── Dog (Child Class)
+  ├── Cat (Child Class)
+  ├── Bird (Child Class) 
+6. Promotes Extensibility
+New features can be added to the parent class, and all child classes automatically get them.
+7. Supports Real-World Modeling
