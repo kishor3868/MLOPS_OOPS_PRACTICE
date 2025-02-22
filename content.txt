@@ -62,3 +62,29 @@ Animal (Base Class)
 6. Promotes Extensibility
 New features can be added to the parent class, and all child classes automatically get them.
 7. Supports Real-World Modeling
+
+#Multiple inheritance using super keyword
+Calling d.greet()
+
+D.greet() is executed first.
+It prints "Hello from D, Frank."
+Calls super().greet(), which follows MRO and goes to class B.
+Calling B.greet()
+
+B.greet() prints "Hello from B, Frank."
+Calls super().greet(), which moves to C (since C comes after B in MRO).
+Calling C.greet()
+
+C.greet() prints "Hello from C, Frank."
+Calls super().greet(), which moves to A.
+Calling A.greet()
+
+A.greet() prints "Hello from A, Frank."
+Since A does not call super().greet(), the method chain stops here.
+Key Learnings:
+Method Resolution Order (MRO):
+Python follows D → B → C → A because of the C3 Linearization Algorithm.
+B appears before C because D(B, C) was defined in that order.
+Using super() in Multiple Inheritance:
+super() does not call the immediate parent only; it follows MRO.
+Since B.greet() uses super().greet(), it moves to C.greet() instead of directly calling A.greet().

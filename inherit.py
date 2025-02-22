@@ -50,6 +50,7 @@ class Dog(Animal):
     def __init__(self,behaviour):
         super().__init__("routella")# argument needed to animal class
         self.behaviour = behaviour
+        # print(super().name) you can only call method using super()key word not attribute
     def speak(self):
         super().speak() # way to call the base class funtion in child class
         print(f"{self.name} barrks and he is very {self.behaviour}")
